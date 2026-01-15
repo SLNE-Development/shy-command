@@ -27,6 +27,8 @@ object HysCommandManager {
     fun registerCommandsToPlatform() {
         _commands.forEach { command ->
             plugin.commandRegistry.register(command.toCommandRegistration())
+
+            plugin.logger.atInfo().log("Registered command: /${command.name}")
         }
     }
 }

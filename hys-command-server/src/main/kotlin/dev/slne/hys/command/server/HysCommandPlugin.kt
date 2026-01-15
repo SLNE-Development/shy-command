@@ -8,16 +8,26 @@ import dev.slne.hys.command.server.command.testCommand
 class HysCommandPlugin(init: JavaPluginInit) : JavaPlugin(init) {
     override fun setup() {
         INSTANCE = this
+
+        testCommand()
+
+        repeat(20) {
+            plugin.logger.atInfo().log("-".repeat(20))
+        }
+        plugin.logger.atInfo().log("Registering ${HysCommandManager.commands.size} commands...")
+        HysCommandManager.registerCommandsToPlatform()
+        repeat(20) {
+            plugin.logger.atInfo().log("-".repeat(20))
+        }
     }
 
     override fun start() {
-        testCommand()
 
-        HysCommandManager.registerCommandsToPlatform()
+        command
     }
 
     override fun shutdown() {
-        
+
     }
 
     companion object {

@@ -1,5 +1,5 @@
 [versions]
-hytale-server = "1.0-SNAPSHOT"
 
 [libraries]
-hytale-server = { module = "com.hypixel.hytale:HytaleServer-parent", version.ref = "hytale-server" }
+
+[plugins]
